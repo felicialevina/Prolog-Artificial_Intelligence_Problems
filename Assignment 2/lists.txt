@@ -1,0 +1,140 @@
+﻿Question 1
+1. [ [ ] ]  and  [F | F]
+	* Let F = [ ]
+
+		[ [ ] ] and [ [ ] | [ ] ] 
+
+	* meaning: [ ] is the head and [ ] is the tail
+	* Remove “| [ ]” to merge the lists
+
+		[ [ ] ] and [ [ ] ] 
+
+	* The pair can be made identical.
+
+
+2. [ F, [a, G | V] ]  and  [V, [F, d, a] ]
+	* Let V = [ ]
+
+		[ F, [a, G | [ ]] ]  and  [ [ ], [F, d, a] ]
+
+	* Remove “| [ ]” to from the first list
+
+		[ F, [a, G] ]  and  [ [ ], [F, d, a] ]
+
+	* Let F = [ ]
+
+		[ [ ], [a, G] ]  and  [ [ ], [[ ], d, a] ]
+
+	* The pair cannot be made identical because the second element of both lists (which is also a list) do not have the same number of elements ([a, G] and [ [ ], d, a ])
+
+
+3. [ F|G ]   and   [ [q,p,r,s] ]
+	* Let F = [q,p,r,s] and G = [ ]
+
+	        [ [q,p,r,s]|[ ] ] and [ [q,p,r,s] ]
+
+	* Remove “| [ ]” to merge the lists
+
+	        [ [q,p,r,s] ] and [ [q,p,r,s] ]
+
+	* The pair can be made identical.
+
+
+4. [ F, [ ] | [c | G] ]  and  [ a | [G, c] ]
+	* Let F = a and G = [ ] 
+
+	      	 [ a, [ ] | [ c | [ ] ] ] and [ a | [ [ ] , c ] ]
+
+	* Remove the first “| [...]”  from both lists and change it to ,
+
+	        [ a, [ ] , c | [ ] ] and [ a, [ ] , c ]
+
+	* Remove the last “| [...]”  from the first list 
+
+	        [ a, [ ], c ] and [ a, [ ], c ]
+
+	* The pair can be made identical.
+
+
+5. [ P, a | [d, P | R] ]   and   [ [a | [b, c]] | [F, G | [I]] ]
+	* Let P = [a ,b, c] , R = [ ] , F = a , G = d , I = [a, b, c]
+
+        	[ [a, b, c], a | [d, [a, b, c] | [ ]] ]   and   [ [a | [b, c]] | [a, d | [[a, b, c]]] ]
+
+	* Remove the first “| [...]”  from both lists
+
+        	[ [a, b, c], a, d, [a, b, c] | [ ] ]   and   [ [a, b, c] | [a, d | [[a, b, c]]] ]
+
+	* Remove the second “| [...]”  from both lists
+
+        	[ [a, b, c], a, d, [a, b, c] ]   and   [ [a, b, c], a, d | [[a, b, c]] ]
+
+	* Remove the last  “| [...]”  from second list
+
+        	[ [a, b, c], a, d, [a, b, c] ]   and   [ [a, b, c], a, d, [a, b, c] ]
+
+	* The pair can be made identical.
+
+
+6. [ F, [G], J | W ]  and  [ mth110, mth210 | [cps305, cps721] ]
+	* Remove the “| [...]”  from the second list and change it to ,
+
+		[ F, [G], J | W ]  and  [ mth110, mth210, cps305, cps721 ]
+
+	* Let W = [ ]
+
+		[ F, [G], J | [ ] ]  and  [ mth110, mth210, cps305, cps721 ]
+
+	* Remove the “| [ ]”  from the first list 
+
+	[ F, [G], J ]  and  [ mth110, mth210, cps305, cps721 ]
+
+	* The pair cannot be made identical because the first list has a list as one of its elements, [G], while the second list does not have any list element
+
+
+7. [ F, G | [k, [G, l]] ]   and   [ k | [l | [F, J]] ]
+	* Let F = k:
+
+		[ k, G | [k, [G, l]] ]   and   [ k | [l | [k, J]] ]
+
+	* Let G = l:
+
+		[ k, l | [k, [l, l]] ]   and   [ k | [l | [k, J]] ]
+
+	* Let J = [ l, l ]:
+
+		[ k, l | [k, [l, l]] ]   and   [ k | [l | [k, [l, l]]] ]
+
+	* Remove the “| [...]”  from the first list.
+
+		[ k, l , k, [l, l] ]   and   [ k , l | [k, [l, l]] ]
+
+	* Remove the “| [...]”  from the second list. 
+
+		[ k, l , k, [l, l] ]   and   [ k, l , k, [l, l] ]
+
+	* The pair can be made identical.
+
+
+8. [ a, b | F ]  and  [ a, G, d | [e, [G | [c]]] ]
+	* Remove “| [...]” from the second list
+
+        	[ a, b | F ]  and  [ a, G, d, e, [G | [c]] ]
+
+	* Remove “| [...]” from the second list
+
+		[ a, b | F ]  and  [ a ,G,d ,e, [G , c] ]
+
+	* Let G = b
+
+		[ a, b | F ]  and  [ a, b, d, e, [b, c] ]
+
+	* Let F = [d, e, [b,c]]
+
+		[ a, b | [d, e, [b, c]] ]  and  [ a, b, d, e, [b, c] ]
+
+	* Remove “| [...]” from the first list
+
+		[ a, b, d, e, [b, c] ]  and  [ a, b, d, e ,[b, c] ]
+
+	* The pair can be made identical.

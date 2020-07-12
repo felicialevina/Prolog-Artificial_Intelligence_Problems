@@ -1,0 +1,47 @@
+Condition 1: Inadequate Savings
+	saved(10000).
+	earnings(9000).
+	cash(10000).
+	dependents(3).
+Output:
+	?- save(S).
+	S = 10000
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+	?- invest(I).
+	I = 0
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+
+Condition 2: Adequate Savings and Adequate Income
+	saved(30000).
+	earnings(50000).
+	cash(10000).
+	dependents(3).
+Output:
+	?- save(S).
+	S = 5000.0
+	Yes (0.00s cpu, solution 1, maybe more)	
+	No (0.00s cpu)
+
+	?- invest(I).
+	I = 5000.0
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+
+Condition 3: Adequate Savings and Inadequate Income
+	saved(30000).
+	earnings(25000).
+	cash(10000).
+	dependents(3).
+Output:
+	?- save(S).
+	S = 2000.0
+	Yes (0.00s cpu)
+
+	?- invest(I).
+	I = 8000.0
+	Yes (0.00s cpu)

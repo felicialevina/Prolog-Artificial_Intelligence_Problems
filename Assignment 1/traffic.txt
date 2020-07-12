@@ -1,0 +1,45 @@
+?- canDriveStraight(Car, X, Y).
+Car = honda
+X = 11
+Y = -26
+Yes (0.00s cpu, solution 1, maybe more)
+Car = subaru
+X = -3
+Y = 34
+Yes (0.00s cpu, solution 2, maybe more)
+No (0.00s cpu)
+
+Explanation:
+	The above results are true because based on the KB,
+	1. honda is at position (11, -26) and the state of light at that coordinate is green.
+	2. subaru is at position (-3, 34) and the state of light at that coordinate is green. 
+
+
+
+?- canTurnLeft(Car, X, Y).
+No (0.00s cpu)
+
+Explanation:
+	The above result is true because based on the KB,
+	1. The state of light for bmw and ford is red while according to the rules, you can only turn left if the light is green
+	Therefore, they can't turn left
+	2. honda and subaru are going in opposite directions but the distance between them is less than 80 units 
+	Therefore, they can't turn left (because distance has to be greater than 80 according to the rules)
+
+
+?- canTurnRight(Car, X, Y).
+Car = honda
+X = 11
+Y = -26
+Yes (0.00s cpu, solution 1, maybe more)
+Car = subaru
+X = -3
+Y = 34
+Yes (0.00s cpu, solution 2, maybe more)
+No (0.00s cpu)
+
+Explanation:
+	The above results are true because based on the KB, 
+	1. The state of light for honda and subaru is green and according to the rules, a car can turn right if the state of light at that coordinate is green (which can be backtracked by canDriveStraight)
+	2. This doesn't apply to bmw because bmw is perpendicular to subaru but their distance is less than 45 (which is the requirement if it wants to turn right)
+	3. This doesn't apply to ford because ford is perpendicular to honda but their distance is less than 45 (which is the requirement if it wants to turn right)

@@ -1,0 +1,142 @@
+Question 1 Queries and Answers
+
+1. ?- cons([], null).
+	Yes (0.00s cpu)
+
+2. ?- cons([a], next(a, null)).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- cons([a, b], next(a, next(b, null))).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+4. ?- cons([a, b, c], X).
+	X = next(a, next(b, next(c, null)))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+5. ?- cons([a, b], next(a, next(b, next(null, null)))).
+	No (0.00s cpu)
+
+6. ?- cons([a, b], null).
+	No (0.00s cpu)
+
+7. ?- cons([a], []).
+	No (0.00s cpu)
+
+8. ?- cons([a, c, e], X).
+	X = next(a, next(c, next(e, null)))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+9. ?- cons([a, b, c, d, e], next(a, next(b, next(c, next(d, next(null, null), null), null), null), null)).
+	No (0.00s cpu)
+
+10. ?- cons([a, c, e], null).
+	No (0.00s cpu)
+
+
+
+Question 2 Queries and Answers
+
+1. ?- cons([[a]], next(next(a, null), null)).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+2. ?- cons([[[a]]], next(next(next(a, null), null), null)).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- cons([a, [b, [c]]], X).
+	X = next(a, next(next(b, next(next(c, null), null)), null))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+4. ?- cons([a, [b]], next(a, next(b, null))).
+	No (0.00s cpu)
+
+5. ?- cons([[a]], next(a, null)).
+	No (0.00s cpu)
+
+6. ?- cons([[a, b]], X).
+	X = next(next(a, next(b, null)), null)
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+7. ?- cons([a, [b]], X).
+	X = next(a, next(next(b, null), null))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+8. ?- cons([[a]], null).
+	No (0.00s cpu)
+
+9. ?- cons([[a, [b, c]]], next(next(a, next(next(b, next(c, null)), null)), null)).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+10. ?- cons([[a, c, [[e]]]], next(a, next(c, next(next(next(e, null), null), null)))).
+	No (0.00s cpu)
+
+
+
+Question 3 Queries and Answers
+
+1. ?- linked2List(next(a, null), [a]).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+2. ?- cons([a, [b, [c], d], e], X), linked2List(X, List).
+	X = next(a, next(next(b, next(next(c, null), next(d, null))), next(e, null)))
+	List = [a, [b, [c], d], e]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- cons([a, [b, [c], d]], X), linked2List(X, List).
+	X = next(a, next(next(b, next(next(c, null), next(d, null))), null))
+	List = [a, [b, [c], d]]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+4. ?- cons([a, [b, [c]]], X), linked2List(X, List).
+	X = next(a, next(next(b, next(next(c, null), null)), null))
+	List = [a, [b, [c]]]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+5. ?- cons([a, [b, c]], X), linked2List(X, List).
+	X = next(a, next(next(b, next(c, null)), null))
+	List = [a, [b, c]]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+6. ?- cons([[a], [[b, c]]], X), linked2List(X, List).
+	X = next(next(a, null), next(next(next(b, next(c, null)), null), null))
+	List = [[a], [[b, c]]]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+7.  ?- cons([], X), linked2List(X, List).
+	X = null
+	List = []
+	Yes (0.00s cpu)
+
+8. ?- cons([[a, b]], X), linked2List(X, List).
+	X = next(next(a, next(b, null)), null)
+	List = [[a, b]]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+9. ?- cons([[[a], [b]], [[c], [d]]], X), linked2List(X, List).
+	X = next(next(next(a, null), next(next(b, null), null)), next(next(next(c, null), next(next(d, null), null)), null))
+	List = [[[a], [b]], [[c], [d]]]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+10. ?- cons([[[v], [m], [i], [n], [95]]], X), linked2List(X, List).
+	X = next(next(next(v, null), next(next(m, null), next(next(i, null), next(next(n, null), next(next(95, null), null))))), null)
+	List = [[[v], [m], [i], [n], [95]]]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.02s cpu)
+

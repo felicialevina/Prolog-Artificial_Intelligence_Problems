@@ -1,0 +1,285 @@
+Prolog Queries
+1. ?- block(X), size(X, large), color(X, blue), shape(X, wedge), locatedOn(X, Y), not block(Y).
+	X = block1
+	Y = area1
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.02s cpu)
+
+2. ?- block(X), size(X, small), color(X, green).
+	X = block9
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- block(X), color(X, yellow), shape(X, pyramid), locatedOn(X, Y), block(Y), size(Y, large), shape(Y, cube).
+	X = block4
+	Y = block3
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+4. ?- block(X), shape(X, cube), beside(X, Y), block(Y), color(Y, orange), shape(Y, wedge).
+	X = block3
+	Y = block2
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+5a. ?- block(X), color(X, pink), shape(X, wedge), above(X, Y), block(Y), shape(Y, cube), locatedOn(Y, Z), block(Z), size(Z, large), color(Z, red).
+	No (0.00s cpu)
+*cube on red block*
+
+5b. ?- block(X), color(X, pink), shape(X, wedge), above(X, Y), block(Y), shape(Y, cube), locatedOn(X, Z), block(Z), size(Z, large), color(Z, red), not Y = Z.
+	X = block7
+	Y = block5
+	Z = block6
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+*wedge on red block*
+
+6. ?- block(X), color(X, green), shape(X, wedge), above(X, Y), block(Y), color(Y, blue), beside(Y, Z), block(Z), size(Z, small), color(Z, red), shape(Z, pyramid).
+	X = block9
+	Y = block8
+	Z = block10
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.02s cpu)
+
+7. ?- block(X), color(X, pink), size(X, medium), shape(X, wedge), above(X, Y), block(Y), beside(Y, Z), block(Z), size(Z, medium), color(Z, blue), shape(Z, cube).
+	X = block7
+	Y = block5
+	Z = block8
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+8. ?- block(X), size(X, large), color(X, green), shape(X, cube), beside(X, Y), block(Y), size(Y, large), color(Y, green), shape(Y, cube).
+	X = block3
+	Y = block5
+	Yes (0.00s cpu, solution 1, maybe more)
+	X = block5
+	Y = block3
+	Yes (0.00s cpu, solution 2, maybe more)
+	No (0.00s cpu)
+
+9. ?- block(X), color(X, red), size(X, small), shape(X, pyramid), locatedOn(X, Y), not block(Y).
+	X = block10
+	Y = area6
+	Yes (0.00s cpu)
+
+10. ?- block(X), color(X, pink), above(X, Y), block(Y), size(Y, large), color(Y, green), shape(Y, cube).
+	X = block7
+	Y = block5
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+11. ?- block(X), size(X, small), color(X, red), shape(X, pyramid), beside(X, Y), color(Y, green), shape(Y, wedge).
+	No (0.00s cpu)
+
+12. ?- block(X), size(X, medium), color(X, yellow), shape(X, pyramid), above(X, Y), block(Y), size(Y, large), color(Y, green), shape(Y, cube), beside(Y, Z), block(Z), color(Z, orange).
+	X = block4
+	Y = block3
+	Z = block2
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+13. ?- block(X), size(X, medium), color(X, blue), above(Y, X), size(Y, small), color(Y, green), shape(Y, wedge).
+	X = block8
+	Y = block9
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+14. ?- block(X), size(X, small), color(X, orange), beside(X, Y), size(Y, large), color(Y, blue), shape(Y, wedge).
+	No (0.00s cpu)
+
+15. ?- block(X), size(X, medium), color(X, orange), shape(X, wedge), beside(X, Y), block(Y), color(Y, green), shape(Y, cube), above(Z, Y), block(Z), color(Z, yellow).
+	X = block2
+	Y = block3
+	Z = block4
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+16. ?- block(X), size(X, medium).
+	X = block2
+	Yes (0.00s cpu, solution 1, maybe more)
+	X = block4
+	Yes (0.00s cpu, solution 2, maybe more)
+	X = block7
+	Yes (0.00s cpu, solution 3, maybe more)
+	X = block8
+	Yes (0.00s cpu, solution 4, maybe more)
+	No (0.00s cpu)
+
+17. ?- block(X), color(X, yellow), locatedOn(X, Y), block(Y), size(Y, medium), shape(Y, cube).
+	No (0.00s cpu)
+
+18. ?- block(X), shape(X, cube), above(X, Y), block(Y), color(Y, green), shape(Y, cube).
+	X = block6
+	Y = block5
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+19. ?- block(X), size(X, large), shape(X, cube), above(X, Y), block(Y), size(Y, large), color(Y, green), shape(Y, cube).
+	X = block6
+	Y = block5
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+20. ?- block(X), size(X, large), color(X, green), shape(X, cube), beside(X, Y), block(Y), size(Y, large), color(Y, green), beside(Y, Z), block(Z), color(Z, blue), size(Z, medium), shape(Z, cube).
+	X = block3
+	Y = block5
+	Z = block8
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+
+
+"What" Predicate Queries
+1. ?- what([a, huge, blue, wedge, on, the, table], B).
+	B = block1
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.02s cpu)
+
+2. ?- what([any, small, green, block], B).
+	B = block9
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- what([any, yellow, pyramid, on, a, big, cube], B).
+	B = block4
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+4. ?- what([a, cube, beside, the, orange, wedge], B).
+	B = block3
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+5. ?- what([any, cube, below, a, pink, wedge, on, a, large, red, block], B).
+	B = block5
+	Yes (0.00s cpu, solution 1, maybe more)
+	B = block6
+	Yes (0.00s cpu, solution 2, maybe more)
+	No (0.00s cpu)
+
+6. ?- what([a, green, wedge, above, a, blue, block, beside, the, small, red, pyramid], B).
+	B = block9
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+7. ?- what([the, pink, medium, wedge, above, a, block, beside, a, medium, blue, cube], B).
+	B = block7
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+8. ?- what([the, large, green, cube, beside, the, large, green, cube], B).
+	B = block3
+	Yes (0.00s cpu, solution 1, maybe more)
+	B = block5
+	Yes (0.00s cpu, solution 2, maybe more)
+	No (0.00s cpu)
+
+9. ?- what([any, red, mini, pyramid, on, the, table], B).
+	B = block10
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+10. ?- what([a, pink, block, over, a, large, green, cube], B).
+	B = block7
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+11. ?- what([a, small, red, pyramid, beside, a, green, wedge], B).
+	No (0.00s cpu)
+
+12. ?- what([the, medium, yellow, pyramid, on, a, gigantic, green, cube, beside, a, orange, block], B).
+	B = block4
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+13. ?- what([the, medium, blue, block, underneath, a, small, green, wedge], B).
+	B = block8
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+14. ?- what([a, mini, orange, block, beside, the, huge, blue, wedge], B).
+	No (0.00s cpu)
+
+15. ?- what([any, medium, orange, wedge, beside, a, green, cube, beneath, a, yellow, block], B).
+	B = block2
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+16. ?- what([any, medium, block], B).
+	B = block2
+	Yes (0.00s cpu, solution 1, maybe more)
+	B = block4
+	Yes (0.00s cpu, solution 2, maybe more)
+	B = block7
+	Yes (0.00s cpu, solution 3, maybe more)
+	B = block8
+	Yes (0.00s cpu, solution 4, maybe more)
+	No (0.00s cpu)
+
+17. ?- what([any, yellow, block, on, a, medium, cube], B).
+	No (0.00s cpu)
+
+18. ?- what([any, cube, over, a, green, cube], B).
+	B = block6
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+19. ?- what([a, huge, cube, over, a, gigantic, green, cube], B).
+	B = block6
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+20. ?- what([a, large, green, cube, beside, a, large, green, cube, beside, a, blue, medium, cube], B).
+	B = block3
+	Yes (0.00s cpu, solution 1, maybe more)
+	B = block5
+	Yes (0.00s cpu, solution 2, maybe more)
+	No (0.00s cpu)
+
+
+
+/*Question 7*/
+21. ?- what([the, large, green, cube, on, the, table], B).
+	No (0.00s cpu)
+
+22. ?- what([a, red, large, cube, underneath, the, medium, pink, wedge], B).
+	B = block6
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+23. ?- what([the, medium, block, beside, a, large, green, cube], B).
+	No (0.00s cpu)
+
+24. ?- what([the, medium, blue, block, on, the, table], B).
+	B = block8
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+25. ?- what([the, wedge, above, the, cube], B).
+	No (0.00s cpu)
+
+
+
+
+/*Question 8*/
+26. ?- what([the, orange, medium, wedge, between, the, large, blue, wedge, and, the, large, green, cube], B).
+	B = block2
+	Yes (0.02s cpu, solution 1, maybe more)
+
+27. ?- what([a, yellow, medium, pyramid, between, the, orange, wedge, and, a, green, block], B).
+	B = block4
+	Yes (0.02s cpu, solution 1, maybe more)
+
+28. ?- what([the, large, red, cube, between, the, large, green, cube, and, the, medium, blue, cube], B).
+	B = block6
+	Yes (0.03s cpu, solution 1, maybe more)
+
+29. ?- what([a, green, cube, between, a, large, green, cube, and, the, blue, medium, block], B).
+	B = block5
+	Yes (0.00s cpu, solution 1, maybe more)
+
+30. ?- what([the, small, green, wedge, between, a, large, green, cube, and, a, small, red, pyramid], B).
+	B = block9
+	Yes (0.02s cpu, solution 1, maybe more)
+
+

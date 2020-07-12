@@ -1,0 +1,102 @@
+Question 1 Queries and Answers
+
+1. ?- add(4, [1, 2, 3], X).
+	X = [1, 2, 3]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+2. ?- add(0, [a, b, c, d], X).
+	X = []
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- add(0, [], X).
+	X = []
+	Yes (0.00s cpu, solution 1, maybe more)
+	X = []
+	Yes (0.00s cpu, solution 2)
+
+4. ?- add(0, [q], [q]).
+	No (0.00s cpu)
+
+5. ?- add(1, [], [a, b, c]).
+	No (0.00s cpu)
+
+6. ?- add(3, [a, b, z, c], [a, b, c]).
+	No (0.00s cpu)
+
+7. ?- add(2, [2, 7, 1, 2], [2, 7]).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+8. ?- add(5, [1, 9, 2], []).
+	No (0.00s cpu)
+
+
+
+Question 2 Queries and Answers
+
+1. ?- convert([], []).
+	Yes (0.00s cpu)
+
+2. ?- convert([five], [5]).
+	Yes (0.00s cpu)
+
+3. ?- convert([one, two, three, four], X).
+	X = [1, 2, 3, 4]
+	Yes (0.00s cpu)
+
+4. ?- convert([one, two, three, four], [1, 2, 3, 4]).
+	Yes (0.00s cpu)
+
+5. ?- convert([two, four], []).
+	No (0.00s cpu)
+
+6. ?- convert([two, six], [two, six]).
+	No (0.00s cpu)
+
+7. ?- convert([four], 4).
+	No (0.00s cpu)
+
+8. ?- convert(X, [7, 1]).
+	X = [seven, one]
+	Yes (0.00s cpu)
+
+
+
+Question 3 Queries and Answers
+
+1. ?- grep([a], [a, b, [c, a], [a], d, [a], [[a]], e], X).
+	X = [4, 6]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+2. ?- grep(live, [learn, as, if, you, were, to, live, forever], A).
+	A = [7]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- grep([1, 2], [a, b, [1, 2, 3], c, [1, 2], d], [5]).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+4. ?- grep(1, [1, 2, 3, 4, 5, 6, 3, 2, 1], X).
+	X = [1, 9]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+5. ?- grep([], [a, b, c], A).
+	No (0.00s cpu)
+
+6. ?- grep([1, 2], [a, b, [1, 2, 3], c, [1, 2], d], [2, 3, 4]).
+	No (0.00s cpu)
+
+7. ?- grep([], [a, [], b, [], [[]], c], X).
+	X = [2, 4]
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+8. ?- grep(study, [learn, as, if, you, were, to, live, forever], A).
+	No (0.00s cpu)
+
+

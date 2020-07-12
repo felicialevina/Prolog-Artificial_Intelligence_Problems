@@ -1,0 +1,61 @@
+Question 1 Queries and Answers
+
+1. ?- replace(a, b, tree(a, tree(c, void, void), tree(a, void, void)), T).
+	T = tree(b, tree(c, void, void), tree(b, void, void))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+2. ?- replace(7, 9, tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, tree(5, void, void), tree(7, void, void))), X).
+	X = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, tree(5, void, void), tree(9, void, void)))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- replace(b, c, tree(b, tree(c, void, void), tree(b, void, void)), tree(c, tree(c, void, void), tree(c, void, void))).
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+4. ?- replace(4, 10, tree(4, tree(2, tree(4, void, void), tree(3, void, void)), tree(4, tree(5, void, void), tree(4, void, void))), X).
+	X = tree(10, tree(2, tree(10, void, void), tree(3, void, void)), tree(10, tree(5, void, void), tree(10, void, void)))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+5. ?- replace(a, c, tree(b, tree(c, void, void), tree(b, void, void)), X).
+	X = tree(b, tree(c, void, void), tree(b, void, void))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+
+
+Question 2 Queries and Answers
+
+1. ?- expand(2, tree(4, void, void), T2), expand(1, T2, T1), expand(3, T1, T3), expand(6, T3, T6), expand(5, T6, T5), expand(7, T5, T7).
+	T2 = tree(4, tree(2, void, void), void)
+	T1 = tree(4, tree(2, tree(1, void, void), void), void)
+	T3 = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), void)
+	T6 = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, void, void))
+	T5 = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, tree(5, void, void), void))
+	T7 = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, tree(5, void, void), tree(7, void, void)))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+2. ?- expand(8, tree(5, void, void), T2), expand(3, T2, T1), expand(6, T1, T3), expand(1, T3, T6), expand(7, T6, T5), expand(4, T5, T7).
+	T2 = tree(5, void, tree(8, void, void))
+	T1 = tree(5, tree(3, void, void), tree(8, void, void))
+	T3 = tree(5, tree(3, void, void), tree(8, tree(6, void, void), void))
+	T6 = tree(5, tree(3, tree(1, void, void), void), tree(8, tree(6, void, void), void))
+	T5 = tree(5, tree(3, tree(1, void, void), void), tree(8, tree(6, void, tree(7, void, void)), void))
+	T7 = tree(5, tree(3, tree(1, void, void), tree(4, void, void)), tree(8, tree(6, void, tree(7, void, void)), void))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+3. ?- expand(5, tree(7, void, void), T2), expand(1, T2, T1), expand(6, T1, T3), expand(9, T3, T6), expand(10, T6, T5), expand(8, T5, T7).
+	T2 = tree(7, tree(5, void, void), void)
+	T1 = tree(7, tree(5, tree(1, void, void), void), void)
+	T3 = tree(7, tree(5, tree(1, void, void), tree(6, void, void)), void)
+	T6 = tree(7, tree(5, tree(1, void, void), tree(6, void, void)), tree(9, void, void))
+	T5 = tree(7, tree(5, tree(1, void, void), tree(6, void, void)), tree(9, void, tree(10, void, void)))
+	T7 = tree(7, tree(5, tree(1, void, void), tree(6, void, void)), tree(9, tree(8, void, void), tree(10, void, void)))
+	Yes (0.00s cpu, solution 1, maybe more)
+	No (0.00s cpu)
+
+

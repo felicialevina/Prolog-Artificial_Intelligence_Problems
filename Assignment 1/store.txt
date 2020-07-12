@@ -1,0 +1,330 @@
+1. ?- inStore(ItemID, ProductType, Quantity), not ProductType = flash_drive, Quantity > 4.
+ItemID = abc123
+ProductType = camera
+Quantity = 12
+Yes (0.00s cpu, solution 1, maybe more)
+ItemID = ahs469
+ProductType = phone
+Quantity = 7
+Yes (0.00s cpu, solution 2, maybe more)
+ItemID = srh437
+ProductType = phone
+Quantity = 15
+Yes (0.00s cpu, solution 3, maybe more)
+ItemID = wds287
+ProductType = phone
+Quantity = 12
+Yes (0.00s cpu, solution 4, maybe more)
+ItemID = sgh537
+ProductType = laptop
+Quantity = 6
+Yes (0.00s cpu, solution 5, maybe more)
+ItemID = sdf673
+ProductType = printer
+Quantity = 8
+Yes (0.00s cpu, solution 6, maybe more)
+No (0.00s cpu)
+
+
+2. ?- inStore(ItemID, laptop, Quantity), manufacturer(ItemID, acer, Year), price(ItemID, Price), Year >= 2018, Price < 500, Quantity > 0.
+ItemID = khj342
+Quantity = 3
+Year = 2018
+Price = 453
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+
+3. ?- inStore(ItemID1, phone, Quantity1), manufacturer(ItemID1, asus, Year1), price(ItemID1, Price1), inStore(ItemID2, phone, Quantity2), manufacturer(ItemID2, apple, Year2), price(ItemID2, Price2), Price1 < Price2, Quantity1 > 0.
+ItemID1 = srh437
+Quantity1 = 15
+Year1 = 2017
+Price1 = 534
+ItemID2 = wds287
+Quantity2 = 12
+Year2 = 2018
+Price2 = 843
+Yes (0.00s cpu, solution 1, maybe more)
+ItemID1 = ads487
+Quantity1 = 3
+Year1 = 2016
+Price1 = 746
+ItemID2 = wds287
+Quantity2 = 12
+Year2 = 2018
+Price2 = 843
+Yes (0.00s cpu, solution 2, maybe more)
+No (0.00s cpu)
+
+
+4. ?- inStore(ItemID, ProductType, Quantity), manufacturer(ItemID, Company1, Year), manufacturer(ItemID, Company2, Year), not Company1 = Company2.
+No (0.00s cpu)
+
+
+5. ?- manufacturer(ItemID, apple, Year), price(ItemID, Price).
+ItemID = wds287
+Year = 2018
+Price = 843
+Yes (0.00s cpu, solution 1, maybe more)
+ItemID = sgh537
+Year = 2017
+Price = 677
+Yes (0.00s cpu, solution 2, maybe more)
+ItemID = gjw785
+Year = 2017
+Price = 435
+Yes (0.00s cpu, solution 3)
+
+
+6. ?- inStore(ItemID1, ProductType1, Quantity1), manufacturer(ItemID1, Company, Year1), inStore(ItemID2, ProductType2, Quantity2), manufacturer(ItemID2, Company, Year2), not ProductType1 = ProductType2.
+ItemID1 = khj342
+ProductType1 = laptop
+Quantity1 = 3
+Company = acer
+Year1 = 2018
+ItemID2 = ahs469
+ProductType2 = phone
+Quantity2 = 7
+Year2 = 2019
+Yes (0.00s cpu, solution 1, maybe more)
+ItemID1 = fda987
+ProductType1 = laptop
+Quantity1 = 2
+Company = acer
+Year1 = 2017
+ItemID2 = ahs469
+ProductType2 = phone
+Quantity2 = 7
+Year2 = 2019
+Yes (0.00s cpu, solution 2, maybe more)
+ItemID1 = ahs469
+ProductType1 = phone
+Quantity1 = 7
+Company = acer
+Year1 = 2019
+ItemID2 = khj342
+ProductType2 = laptop
+Quantity2 = 3
+Year2 = 2018
+Yes (0.00s cpu, solution 3, maybe more)
+ItemID1 = ahs469
+ProductType1 = phone
+Quantity1 = 7
+Company = acer
+Year1 = 2019
+ItemID2 = fda987
+ProductType2 = laptop
+Quantity2 = 2
+Year2 = 2017
+Yes (0.00s cpu, solution 4, maybe more)
+ItemID1 = wds287
+ProductType1 = phone
+Quantity1 = 12
+Company = apple
+Year1 = 2018
+ItemID2 = sgh537
+ProductType2 = laptop
+Quantity2 = 6
+Year2 = 2017
+Yes (0.00s cpu, solution 5, maybe more)
+ItemID1 = wds287
+ProductType1 = phone
+Quantity1 = 12
+Company = apple
+Year1 = 2018
+ItemID2 = gjw785
+ProductType2 = tablet
+Quantity2 = 4
+Year2 = 2017
+Yes (0.00s cpu, solution 6, maybe more)
+ItemID1 = sgh537
+ProductType1 = laptop
+Quantity1 = 6
+Company = apple
+Year1 = 2017
+ItemID2 = wds287
+ProductType2 = phone
+Quantity2 = 12
+Year2 = 2018
+Yes (0.00s cpu, solution 7, maybe more)
+ItemID1 = sgh537
+ProductType1 = laptop
+Quantity1 = 6
+Company = apple
+Year1 = 2017
+ItemID2 = gjw785
+ProductType2 = tablet
+Quantity2 = 4
+Year2 = 2017
+Yes (0.00s cpu, solution 8, maybe more)
+ItemID1 = gjw785
+ProductType1 = tablet
+Quantity1 = 4
+Company = apple
+Year1 = 2017
+ItemID2 = wds287
+ProductType2 = phone
+Quantity2 = 12
+Year2 = 2018
+Yes (0.00s cpu, solution 9, maybe more)
+ItemID1 = gjw785
+ProductType1 = tablet
+Quantity1 = 4
+Company = apple
+Year1 = 2017
+ItemID2 = sgh537
+ProductType2 = laptop
+Quantity2 = 6
+Year2 = 2017
+Yes (0.00s cpu, solution 10, maybe more)
+No (0.00s cpu)
+
+
+7. ?- inStore(ItemID1, laptop, Quantity1), manufacturer(ItemID1, acer, Year1), price(ItemID1, Price1), inStore(ItemID2, printer, Quantity2), manufacturer(ItemID2, canon, Year2), price(ItemID2, Price2), TotalPrice is Price1 + Price2.
+ItemID1 = khj342
+Quantity1 = 3
+Year1 = 2018
+Price1 = 453
+ItemID2 = adw565
+Quantity2 = 4
+Year2 = 2018
+Price2 = 299
+TotalPrice = 752
+Yes (0.00s cpu, solution 1, maybe more)
+ItemID1 = fda987
+Quantity1 = 2
+Year1 = 2017
+Price1 = 532
+ItemID2 = adw565
+Quantity2 = 4
+Year2 = 2018
+Price2 = 299
+TotalPrice = 831
+Yes (0.00s cpu, solution 2, maybe more)
+No (0.00s cpu)
+
+
+8. ?- inStore(ItemID1, printer, Quantity1), manufacturer(ItemID1, Company1, Year1), price(ItemID1, Price), inStore(ItemID2, printer, Quantity2), manufacturer(ItemID2, Company2, Year2), price(ItemID2, Price), not ItemID1 = ItemID2, not Company1 = Company2, not Company1 = hp, not Company2 = hp.
+ItemID1 = sdf673
+Quantity1 = 8
+Company1 = epson
+Year1 = 2017
+Price = 299
+ItemID2 = adw565
+Quantity2 = 4
+Company2 = canon
+Year2 = 2018
+Yes (0.00s cpu, solution 1, maybe more)
+ItemID1 = adw565
+Quantity1 = 4
+Company1 = canon
+Year1 = 2018
+Price = 299
+ItemID2 = sdf673
+Quantity2 = 8
+Company2 = epson
+Year2 = 2017
+Yes (0.00s cpu, solution 2, maybe more)
+No (0.00s cpu)
+
+
+9. ?- inStore(ItemID1, ProductType1, Quantity1), manufacturer(ItemID1, Company, Year1), inStore(ItemID2, ProductType2, Quantity2), manufacturer(ItemID2, Company, Year2), inStore(ItemID3, ProductType3, Quantity3), manufacturer(ItemID3, Company, Year3), not ProductType1 = ProductType2, not ProductType2 = ProductType3, not ProductType1 = ProductType3.
+ItemID1 = wds287
+ProductType1 = phone
+Quantity1 = 12
+Company = apple
+Year1 = 2018
+ItemID2 = sgh537
+ProductType2 = laptop
+Quantity2 = 6
+Year2 = 2017
+ItemID3 = gjw785
+ProductType3 = tablet
+Quantity3 = 4
+Year3 = 2017
+Yes (0.00s cpu, solution 1, maybe more)
+ItemID1 = wds287
+ProductType1 = phone
+Quantity1 = 12
+Company = apple
+Year1 = 2018
+ItemID2 = gjw785
+ProductType2 = tablet
+Quantity2 = 4
+Year2 = 2017
+ItemID3 = sgh537
+ProductType3 = laptop
+Quantity3 = 6
+Year3 = 2017
+Yes (0.02s cpu, solution 2, maybe more)
+ItemID1 = sgh537
+ProductType1 = laptop
+Quantity1 = 6
+Company = apple
+Year1 = 2017
+ItemID2 = wds287
+ProductType2 = phone
+Quantity2 = 12
+Year2 = 2018
+ItemID3 = gjw785
+ProductType3 = tablet
+Quantity3 = 4
+Year3 = 2017
+Yes (0.02s cpu, solution 3, maybe more)
+ItemID1 = sgh537
+ProductType1 = laptop
+Quantity1 = 6
+Company = apple
+Year1 = 2017
+ItemID2 = gjw785
+ProductType2 = tablet
+Quantity2 = 4
+Year2 = 2017
+ItemID3 = wds287
+ProductType3 = phone
+Quantity3 = 12
+Year3 = 2018
+Yes (0.02s cpu, solution 4, maybe more)
+ItemID1 = gjw785
+ProductType1 = tablet
+Quantity1 = 4
+Company = apple
+Year1 = 2017
+ItemID2 = wds287
+ProductType2 = phone
+Quantity2 = 12
+Year2 = 2018
+ItemID3 = sgh537
+ProductType3 = laptop
+Quantity3 = 6
+Year3 = 2017
+Yes (0.02s cpu, solution 5, maybe more)
+ItemID1 = gjw785
+ProductType1 = tablet
+Quantity1 = 4
+Company = apple
+Year1 = 2017
+ItemID2 = sgh537
+ProductType2 = laptop
+Quantity2 = 6
+Year2 = 2017
+ItemID3 = wds287
+ProductType3 = phone
+Quantity3 = 12
+Year3 = 2018
+Yes (0.03s cpu, solution 6, maybe more)
+No (0.03s cpu)
+
+
+10. ?- inStore(ItemID1, phone, Quantity1), manufacturer(ItemID1, asus, Year1), price(ItemID1, Price1), not (inStore(ItemID2, phone, Quantity2), manufacturer(ItemID2, asus, Year2), price(ItemID2, Price2), Price2 < Price1).
+ItemID1 = srh437
+Quantity1 = 15
+Year1 = 2017
+Price1 = 534
+ItemID2 = ItemID2
+Quantity2 = Quantity2
+Year2 = Year2
+Price2 = Price2
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+

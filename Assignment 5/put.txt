@@ -1,0 +1,40 @@
+?- what([any, yellow, pyramid, on, a, big, cube], B, []).
+	B = block4
+	Yes (0.00s cpu, solution 1, maybe more)
+
+?- what([the, pink, wedge, above, a, block, beside, a, medium, blue, cube], B, [putOn(block10, block6)]).
+	B = block10
+	Yes (0.00s cpu, solution 1, maybe more)
+
+?- what([the, pink, wedge, above, a, block, beside, a, medium, blue, cube], B, [putOn(block10, block6), putOn(block6, block10)]).
+	No (0.00s cpu)
+
+?- what([the, red, cube, above, a, block, beside, an, orange, wedge], X, [putOn(block1, block3), putOn(block4, block6)]).
+	X = block1
+	Yes (0.00s cpu, solution 1, maybe more)
+
+?- do([put, an, orange, wedge, on, the, medium, blue, cube], [], S).
+	S = [putOn(block2, block7)]
+	Yes (0.00s cpu, solution 1, maybe more)
+
+?- do([put, a, yellow, pyramid, on, the, large, green, cube], [], S).
+	S = [putOn(block4, block6)]
+	Yes (0.00s cpu, solution 1, maybe more)
+
+?- do([put, an, orange, wedge, on, the, medium, blue, cube], [], S), what([a, wedge, above, a, blue, block], B, S).
+	S = [putOn(block2, block7)]
+	B = block2
+	Yes (0.00s cpu, solution 1, maybe more)
+
+?- do([put, a, green, pyramid, on, a, red, cube], [], S), what([a, green, pyramid, above, a, red, cube], B, S).
+	S = [putOn(block8, block1)]
+	B = block8
+	Yes (0.00s cpu, solution 1, maybe more)
+
+?- do([put, a, large, pink, wedge, on, a, small, red, cube], [], S), what([a, large, pink, wedge, on, a, small, red, cube], B, S).
+	S = [putOn(block10, block1)]
+	B = block10
+	Yes (0.00s cpu, solution 1, maybe more)
+
+?- do([put, a, large, pink, wedge, on, a, small, red, cube], [], [putOn(block2, block1)]), what([a, large, pink, wedge, on, a, small, red, cube], B, S).
+	No (0.00s cpu)

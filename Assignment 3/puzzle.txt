@@ -1,0 +1,116 @@
+Program 1 - puzzle1.pl
+
+?- solve(L).
+
+	L = [9, 0, 5, 1, 2, 8, 6]
+
+	Yes (0.50s cpu, solution 1, maybe more)
+
+	No (0.56s cpu)
+
+
+
+?- X is cputime, solve(L), Y is cputime, Z is Y - X.
+
+	X = 0.625
+
+	L = [9, 0, 5, 1, 2, 8, 6]
+
+	Y = 1.125
+
+	Z = 0.5
+
+	Yes (0.50s cpu, solution 1, maybe more)
+
+	No (0.59s cpu)
+
+
+
+?- print_solution(List).
+
+	List = [9, 0, 5, 1, 2, 8, 6]
+
+	Yes (0.20s cpu, solution 1, maybe more)
+
+	No (0.30s cpu)
+
+
+
+Printing Output: 
+
+     905
+
+*     12
+
+  -------
+
+    1810
+
++   905
+
+  -------
+
+   10860
+
+
+
+
+
+
+
+Program 2 - puzzle2.pl
+
+?- solve(L).
+
+	L = [9, 0, 5, 1, 2, 8, 6]
+
+	Yes (0.00s cpu, solution 1, maybe more)
+
+	No (0.00s cpu)
+
+
+
+?- X is cputime, solve(L), Y is cputime, Z is Y - X.
+
+	X = 1.515625
+
+	L = [9, 0, 5, 1, 2, 8, 6]
+
+	Y = 1.515625
+
+	Z = 0.0
+
+	Yes (0.00s cpu, solution 1, maybe more)
+
+	No (0.00s cpu)
+
+
+
+?- print_solution(List).
+
+	List = [9, 0, 5, 1, 2, 8, 6]
+
+	Yes (0.00s cpu, solution 1, maybe more)
+
+	No (0.00s cpu)
+
+
+
+Printing Output: 
+
+     905
+
+*     12
+
+  -------
+
+    1810
+
++   905
+
+  -------
+
+   10860
+
+
+

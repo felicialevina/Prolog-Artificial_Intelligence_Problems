@@ -1,0 +1,57 @@
+Goal State 1 - airborne(boeing347,Seg,S).
+
+?- solve_problem(7, L).
+	L = [takeoff(boeing347, seg(v5, v4), v4), startup(boeing347), move(boeing347, medium, v5, seg(v7, v5), seg(v5, v4), v4), move(boeing347, medium, v7, seg(v2, v7), seg(v7, v5), v5), move(boeing347, medium, v2, seg(v8, v2), seg(v2, v7), v7), move(boeing347, medium, v8, seg(v0, v8), seg(v8, v2), v2), pushback(boeing347, medium, v0, seg(v8, v0), seg(v0, v8), v8)]
+Yes (0.14s cpu, solution 1, maybe more)
+
+	L = [takeoff(boeing347, seg(v5, v4), v4), move(boeing347, medium, v5, seg(v7, v5), seg(v5, v4), v4), startup(boeing347), move(boeing347, medium, v7, seg(v2, v7), seg(v7, v5), v5), move(boeing347, medium, v2, seg(v8, v2), seg(v2, v7), v7), move(boeing347, medium, v8, seg(v0, v8), seg(v8, v2), v2), pushback(boeing347, medium, v0, seg(v8, v0), seg(v0, v8), v8)]
+Yes (0.14s cpu, solution 2, maybe more)
+
+	L = [takeoff(boeing347, seg(v5, v4), v4), move(boeing347, medium, v5, seg(v7, v5), seg(v5, v4), v4), move(boeing347, medium, v7, seg(v2, v7), seg(v7, v5), v5), startup(boeing347), move(boeing347, medium, v2, seg(v8, v2), seg(v2, v7), v7), move(boeing347, medium, v8, seg(v0, v8), seg(v8, v2), v2), pushback(boeing347, medium, v0, seg(v8, v0), seg(v0, v8), v8)]
+Yes (0.14s cpu, solution 3, maybe more)
+
+	L = [takeoff(boeing347, seg(v5, v4), v4), move(boeing347, medium, v5, seg(v7, v5), seg(v5, v4), v4), move(boeing347, medium, v7, seg(v2, v7), seg(v7, v5), v5), move(boeing347, medium, v2, seg(v8, v2), seg(v2, v7), v7), startup(boeing347), move(boeing347, medium, v8, seg(v0, v8), seg(v8, v2), v2), pushback(boeing347, medium, v0, seg(v8, v0), seg(v0, v8), v8)]
+Yes (0.17s cpu, solution 4, maybe more)
+
+	L = [takeoff(boeing347, seg(v5, v4), v4), move(boeing347, medium, v5, seg(v7, v5), seg(v5, v4), v4), move(boeing347, medium, v7, seg(v2, v7), seg(v7, v5), v5), move(boeing347, medium, v2, seg(v8, v2), seg(v2, v7), v7), move(boeing347, medium, v8, seg(v0, v8), seg(v8, v2), v2), startup(boeing347), pushback(boeing347, medium, v0, seg(v8, v0), seg(v0, v8), v8)]
+Yes (0.23s cpu, solution 5, maybe more)
+
+	No (0.45s cpu)
+
+Elapsed time (sec): 0.140625, Elapsed time (sec): 0.140625, Elapsed time (sec): 0.140625, Elapsed time (sec): 0.15625, Elapsed time (sec): 0.234375
+
+
+
+Goal State 2 -  isParked(md25,seg(v9,v1),S).
+?- solve_problem(5, L).
+	L = [park(md25, light, seg(v9, v1), v1), move(md25, light, v9, seg(v2, v9), seg(v9, v1), v1), move(md25, light, v2, seg(v6, v2), seg(v2, v9), v9), move(md25, light, v6, seg(v3, v6), seg(v6, v2), v2), move(md25, light, v3, seg(v4, v3), seg(v3, v6), v6)]
+Yes (0.02s cpu, solution 1, maybe more)
+No (0.05s cpu)
+
+
+
+Goal State 3 -  goal_state(S) :- isParked(md25,seg(v9,v1),S), airborne(boeing347,Seg,S).
+?- solve_problem(12, L).
+	L = [takeoff(boeing347, seg(v3, v4), v4), park(md25, light, seg(v9, v1), v1), startup(boeing347), move(boeing347, medium, v3, seg(v6, v3), seg(v3, v4), v4), move(boeing347, medium, v6, seg(v2, v6), seg(v6, v3), v3), move(boeing347, medium, v2, seg(v8, v2), seg(v2, v6), v6), move(boeing347, medium, v8, seg(v0, v8), seg(v8, v2), v2), pushback(boeing347, medium, v0, seg(v8, v0), seg(v0, v8), v8), move(md25, light, v9, seg(v2, v9), seg(v9, v1), v1), move(md25, light, v2, seg(v6, v2), seg(v2, v9), v9), move(md25, light, v6, seg(v3, v6), seg(v6, v2), v2), move(md25, light, v3, seg(v4, v3), seg(v3, v6), v6)]
+Yes (72.73s cpu, solution 1, maybe more)
+	L = [park(md25, light, seg(v9, v1), v1), takeoff(boeing347, seg(v3, v4), v4), startup(boeing347), move(boeing347, medium, v3, seg(v6, v3), seg(v3, v4), v4), move(boeing347, medium, v6, seg(v2, v6), seg(v6, v3), v3), move(boeing347, medium, v2, seg(v8, v2), seg(v2, v6), v6), move(boeing347, medium, v8, seg(v0, v8), seg(v8, v2), v2), pushback(boeing347, medium, v0, seg(v8, v0), seg(v0, v8), v8), move(md25, light, v9, seg(v2, v9), seg(v9, v1), v1), move(md25, light, v2, seg(v6, v2), seg(v2, v9), v9), move(md25, light, v6, seg(v3, v6), seg(v6, v2), v2), move(md25, light, v3, seg(v4, v3), seg(v3, v6), v6)]
+Yes (72.73s cpu, solution 2, maybe more)
+	L = [takeoff(boeing347, seg(v3, v4), v4), startup(boeing347), park(md25, light, seg(v9, v1), v1), move(boeing347, medium, v3, seg(v6, v3), seg(v3, v4), v4), move(boeing347, medium, v6, seg(v2, v6), seg(v6, v3), v3), move(boeing347, medium, v2, seg(v8, v2), seg(v2, v6), v6), move(boeing347, medium, v8, seg(v0, v8), seg(v8, v2), v2), pushback(boeing347, medium, v0, seg(v8, v0), seg(v0, v8), v8), move(md25, light, v9, seg(v2, v9), seg(v9, v1), v1), move(md25, light, v2, seg(v6, v2), seg(v2, v9), v9), move(md25, light, v6, seg(v3, v6), seg(v6, v2), v2), move(md25, light, v3, seg(v4, v3), seg(v3, v6), v6)]
+Yes (72.73s cpu, solution 3, maybe more)
+
+Elapsed time (sec): 72.734375, Elapsed time (sec): 72.734375, Elapsed time (sec): 72.734375
+
+
+
+Brief Summary of Result (Why are there multiple solutions?)
+1. There can be multiple solutions in the first goal state because action startup of airplane (boeing347) can be done in any order as long as the action is after pushback and before takeoff
+2. There can be multiple solutions in the third goal state because action park of an airplane (md25) can be done in any order as long as it is after all the moves of md25 (it can be positioned anywhere between the actions of boeing347). 
+
+
+Hardware
+CPU: Intel(R) Core(TM) i5-8250U CPU @1.60 GHz 1.80 GHz
+Installed RAM: 8.00 GB
+
+
+
+
